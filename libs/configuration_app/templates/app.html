@@ -5,8 +5,9 @@
 <div class="row justify-content-center">
     <div class="col-md-6" style="margin-top: 5%">
         <div class="panel-heading">
-            <h3 class="panel-title">WiFi Settings</h3>
+            <h3 class="panel-title">Réglages Wifi</h3>
             <hr>
+            <!-- 
             <div class="alert alert-warning" role="alert">
                 {% if config_hash['wpa_enabled'] == '1': %}
                 <a href="{{ url_for('wpa_settings') }}">Config Mode WPA: ENABLED</a>
@@ -18,12 +19,13 @@
                 {% endif %}
             </div>
             <hr>
+            -->
         </div>
         <div class="panel-body">
             <form action="{{ url_for('save_credentials') }}" method=post role="form">
                 <fieldset>
                     <div class="form-group">
-                        <label for="ssid">Select your WiFi network</label>
+                        <label for="ssid">Sélectionner votre wifi</label>
 
 
                         <select , class="form-control" id="ssid" name="ssid">
@@ -31,17 +33,16 @@
                             <option value='{{ ssid }}'>{{ ssid }}</option>
                             {% endfor %}
                         </select>
-                        <small id="emailHelp" class="form-text text-muted">Your credentials will stay local
-                            100%!</small>
+                        <small id="emailHelp" class="form-text text-muted">Aucune donnée n'est enregistrée hors de cette appareil</small>
                     </div>
 
                     <div class="form-group">
-                        <label for="wifi_key">Your Wifi password</label>
+                        <label for="wifi_key">Votre mot de passe wifi</label>
                         <input class="form-control" id="wifi_key" name="wifi_key" type="password">
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Save credentials!</button>
+                    <button type="submit" class="btn btn-primary mb-2">Enregistrer !</button>
                     <hr>
-                    <h6><a href="{{ url_for('manual_ssid_entry') }}">Want to enter Credentials manually?</a></h6>
+                    <h6><a href="{{ url_for('manual_ssid_entry') }}">Cliquer ici si vous souhaitez entrer vos données de connexion manuellement</a></h6>
                     <hr>
                     <div class="row justify-content-center">
                         <h6 style="color: gray">{{ footer_vendor_name }}, {{ footer_year}} - {{ footer_version_nr }}</h6>
