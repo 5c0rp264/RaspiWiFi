@@ -34,11 +34,12 @@ def catch_all(path):
 def manual_ssid_entry():
     return render_template('manual_ssid_entry.html', footer_vendor_name = footer_vendor_name, footer_version_nr = footer_version_nr, footer_year = footer_year, title_vendor_name = title_vendor_name)
 
+'''
 @app.route('/wpa_settings')
 def wpa_settings():
     config_hash = config_file_hash()
     return render_template('wpa_settings.html', wpa_enabled = config_hash['wpa_enabled'], wpa_key = config_hash['wpa_key'], footer_vendor_name = footer_vendor_name, footer_version_nr = footer_version_nr, footer_year = footer_year, title_vendor_name = title_vendor_name)
-
+'''
 
 @app.route('/save_credentials', methods = ['GET', 'POST'])
 def save_credentials():
@@ -60,6 +61,7 @@ def save_credentials():
     return render_template('save_credentials.html', ssid = ssid, footer_vendor_name = footer_vendor_name, footer_version_nr = footer_version_nr, footer_year = footer_year, title_vendor_name = title_vendor_name)
 
 
+'''
 @app.route('/save_wpa_credentials', methods = ['GET', 'POST'])
 def save_wpa_credentials():
     config_hash = config_file_hash()
@@ -81,7 +83,7 @@ def save_wpa_credentials():
 
     config_hash = config_file_hash()
     return render_template('save_wpa_credentials.html', wpa_enabled = config_hash['wpa_enabled'], wpa_key = config_hash['wpa_key'], footer_vendor_name = footer_vendor_name, footer_version_nr = footer_version_nr, footer_year = footer_year, title_vendor_name = title_vendor_name)
-
+'''
 
 
 
