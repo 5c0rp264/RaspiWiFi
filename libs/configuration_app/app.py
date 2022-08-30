@@ -11,10 +11,10 @@ app = Flask(__name__)
 app.debug = True
 
 is_test = False
-title_vendor_name = ''
-footer_vendor_name = ''
-footer_version_nr = ''
-footer_year = ''
+title_vendor_name = 'SmartMenu'
+footer_vendor_name = 'S-CORP & SAB-R'
+footer_version_nr = '1.0'
+footer_year = '2022'
 
 @app.route('/')
 def index():
